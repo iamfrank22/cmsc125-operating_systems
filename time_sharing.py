@@ -27,12 +27,14 @@ class Generator:
         self.resource = []
         self.user = []
         self.waiting_list = []
-
+        
+    # adds a resource to the list
     def addResource(self):
         for resource in range(1, generateResource() + 1):
             res = Resource(str(resource), resource)
             self.resource.append(res)
-
+    
+    # adds a user to the list
     def addUser(self):
         for user in range(1, generateUser() + 1):
             u = User(str(user), user)
@@ -59,7 +61,8 @@ class Generator:
                 print ("Free")
                 print("")
         print("")
-
+        
+    # run the simulation
     def work(self):
         is_all_available = False
         time_count = 1
