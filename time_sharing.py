@@ -69,7 +69,7 @@ class Generator:
 
         while not is_all_available:
             print("+++++++++++++++++++++++++++++++++++++++++++++++++")
-            print("Time Count (in seconds): ", time_count)
+            print("Time Count: ", time_count)
             for resource in self.resource:
                 resource.printName()
                 if resource.is_available:
