@@ -1,4 +1,6 @@
 import random
+import time
+import os
 
 class Resource:
     def __init__(self, name, id):
@@ -27,14 +29,12 @@ class Generator:
         self.resource = []
         self.user = []
         self.waiting_list = []
-        
-    # adds a resource to the list
+
     def addResource(self):
         for resource in range(1, generateResource() + 1):
             res = Resource(str(resource), resource)
             self.resource.append(res)
-    
-    # adds a user to the list
+
     def addUser(self):
         for user in range(1, generateUser() + 1):
             u = User(str(user), user)
@@ -61,15 +61,12 @@ class Generator:
                 print ("Free")
                 print("")
         print("")
-        
-    # run the simulation
+
     def work(self):
         is_all_available = False
-        time_count = 1
 
         while not is_all_available:
             print("+++++++++++++++++++++++++++++++++++++++++++++++++")
-            print("Time Count: ", time_count)
             for resource in self.resource:
                 resource.printName()
                 if resource.is_available:
@@ -106,7 +103,6 @@ class Generator:
                         print("Status: \tIn Use")
 
             print("\n")
-            time_count += 1
 
             print("+++++++++++++++++++++++++++++++++++++++++++++++++")
 
@@ -130,7 +126,16 @@ def main():
     gen.addUser()
     gen.appendUserList()
     gen.showUserAndResource()
-    gen.work()
+
+    timer = 120
+    while timer > 0:
+        gen.work()
+        time.sleep(1)
+        os.system('cls')
+
+        timer -= 1
+
+
 
 
 if __name__ == '__main__':
