@@ -101,9 +101,6 @@ class Generator:
                         print("Status: \tFree\n")
                     else:
                         print("Status: \tIn Use")
-
-            print("\n")
-
             print("+++++++++++++++++++++++++++++++++++++++++++++++++")
 
             for resources in self.resource:
@@ -125,17 +122,14 @@ def main():
     gen.addResource()
     gen.addUser()
     gen.appendUserList()
-    gen.showUserAndResource()
 
-    timer = 120
+    timer = 100
     while timer > 0:
         gen.work()
         time.sleep(1)
-        os.system('cls')
+        os.system('CLS')
 
         timer -= 1
-
-
 
 
 if __name__ == '__main__':
