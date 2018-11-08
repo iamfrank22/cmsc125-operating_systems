@@ -100,11 +100,11 @@ class CPU_Scheduling:
 		
 		return gantt_chart
 
-	# def preemptive_sjf(self):
-	# 	print("\n\n-------Preemptive Shortest Job First------")
-	# 	waiting_list = []
+# 	def preemptive_sjf(self):
+# 		print("\n\n-------Preemptive Shortest Job First------")
+# 		waiting_list = []
 
-	# 	for jobs in self.process:
+# 		for jobs in self.process:
 			
 
 	def nonpreemptive_priority(self):
@@ -188,17 +188,17 @@ def main():
 		elif scheduler is 2:
 			gantt_chart = gen.nonpreemptive_sjf()
 		
-		elif scheduler is 3:
-			gantt_chart = gen.preemptive_sjf()
+# 		elif scheduler is 3:
+# 			gantt_chart = gen.preemptive_sjf()
 		
 		elif scheduler is 4:
 			gantt_chart = gen.nonpreemptive_priority()
 		
-		# elif scheduler is 5:
-		# 	gantt_chart = gen.preemptive_priority()
+# 		elif scheduler is 5:
+# 			gantt_chart = gen.preemptive_priority()
 
-		# elif scheduler is 6:
-		# 	gantt_chart = gen.round_robin()
+# 		elif scheduler is 6:
+# 			gantt_chart = gen.round_robin()
 
 		else:
 			sys.exit(0)	
@@ -209,8 +209,8 @@ def main():
 		if scheduler is 1 or scheduler is 2 or scheduler is 4:
 			print("Ave. waiting time: ", gen.compute_avg_waiting_time(gen.compute_waiting_time()))
 		
-		elif scheduler is 3:
-			print("Ave. waiting time: ", gen.compute_avg_waiting_time(gen.compute_waiting_time()))
+# 		elif scheduler is 3:
+# 			print("Ave. waiting time: ", gen.compute_avg_waiting_time(gen.compute_waiting_time()))
 
 if __name__ == '__main__':
     main()
